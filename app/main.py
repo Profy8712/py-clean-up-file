@@ -10,7 +10,12 @@ class CleanUpFile:
         # You can optionally open the file here if needed.
         return self
 
-    def __exit__(self, exc_type: type, exc_val: Exception, exc_tb: object) -> None:
+    def __exit__(
+        self,
+        exc_type: type[BaseException] | None,
+        exc_val: BaseException | None,
+        exc_tb: object | None,
+    ) -> None:
         # This method is called when exiting the 'with' block.
         # Remove the file if it exists.
         if os.path.exists(self.filename):
@@ -23,3 +28,6 @@ with CleanUpFile("file.txt"):
         file.write("Hello Mate!")
 
 # After the 'with' block, the file "file.txt" will be removed.
+
+
+
