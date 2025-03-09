@@ -20,17 +20,3 @@ class CleanUpFile:
         # Remove the file if it exists.
         if os.path.exists(self.filename):
             os.remove(self.filename)
-
-
-# Example usage:
-with CleanUpFile("file.txt"):
-    with open("file.txt", "w") as file:
-        file.write("Hello Mate!")
-
-# After the 'with' block, the file "file.txt" will be removed.
-
-
-
-
-
-
